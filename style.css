@@ -93,8 +93,10 @@ body {
 .controls_btn button:hover {
   transform: scale(1.05);
 }
-
-@media screen and (max-width: 1380px) {
+.hidden {
+  display: none;
+}
+@media screen and (min-width: 650px) and (max-width: 1380px) {
   body {
     display: flex;
     flex-direction: column;
@@ -111,5 +113,61 @@ body {
     height: 40px;
     border-radius: 50%;
     margin: var(--padding-btw);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+    margin: calc(0.5 * var(--padding-main));
+  }
+  .jsCanvas {
+    height: 90%;
+  }
+  .controls {
+    display: none; /*컨트롤 토글하기!!!*/
+    position: absolute;
+    height: 500px;
+    bottom: 15%;
+    right: 10%;
+    background-color: rgba(48, 47, 43, 0.3);
+    z-index: 1;
+    border-radius: 10px;
+    margin: 0;
+  }
+
+  .controls_btn button {
+    all: unset;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-mint);
+    text-transform: uppercase;
+    padding: var(--padding-btw) 0px;
+    margin: 0 var(--padding-btw);
+    width: 50px;
+    font-size: 12px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid var(--color-line);
+    font-weight: 700;
+    transition: transform 200ms ease-out;
+  }
+
+  .toggleBtn {
+    display: block;
+    color: var(--color-line);
+    font-size: 24px;
+    text-align: end;
+  }
+  .toggleBtn > i {
+    padding: var(--padding-btw);
+    margin-top: calc(2 * var(--padding-btw));
+    background-color: var(--color-mint);
+    border: 1px solid var(--color-line);
+    border-radius: 10%;
   }
 }
