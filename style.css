@@ -1,0 +1,115 @@
+:root {
+  --padding-main: 50px;
+  --padding-btw: 5px;
+  --color-back: #efe9db;
+  --color-line: #32312f;
+  --color-mint: #b3dac5;
+  --color-coral: #f0b796;
+  --color-blue: #b9ddd9;
+}
+
+html {
+  height: 90vh;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-back);
+  display: flex;
+  padding: var(--padding-main);
+  height: 95%;
+  font-family: "Kaushan Script", cursive;
+}
+.canvas {
+  flex: 1 1 70%;
+}
+.jsCanvas {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  border: 2px solid var(--color-line);
+  box-shadow: 7px 9px 0px -1px rgba(3, 35, 18, 1);
+}
+/*aside*/
+.controls {
+  flex: 1 1 30%;
+  height: 85%;
+  margin: 20px var(--padding-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.controls_range {
+  margin-top: var(--padding-main);
+  text-align: center;
+  width: 60%;
+}
+.controls_range > input {
+  width: 80%;
+}
+
+.controls_colors {
+  width: 60%;
+  height: 60%;
+  margin: var(--padding-main);
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.controls_colors .controls_color {
+  width: 4em;
+  height: 4em;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 300ms ease-in;
+}
+
+.controls_color:hover {
+  transform: scale(0.9);
+}
+.controls_btn {
+  margin-bottom: var(--padding-main);
+}
+.controls_btn button {
+  all: unset;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-mint);
+  text-transform: uppercase;
+  padding: var(--padding-btw) 0px;
+  margin: 0 var(--padding-btw);
+  width: 70px;
+  border-radius: 5px;
+  text-align: center;
+  border: 2px solid var(--color-line);
+  font-weight: 700;
+  transition: transform 200ms ease-out;
+}
+
+.controls_btn button:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 1380px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .canvas {
+    height: 80%;
+  }
+  .controls_colors {
+    display: flex;
+    margin: calc(var(--padding-main) * 0.5);
+  }
+  .controls_colors .controls_color {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: var(--padding-btw);
+  }
+}
