@@ -23,7 +23,6 @@ let painting = false;
 let filling = false;
 
 //canvas drawing
-
 if (canvas) {
   canvas.addEventListener("mousemove", draw);
   canvas.addEventListener("mousedown", startDrawing);
@@ -107,4 +106,12 @@ function save(event) {
 //NEW
 newBtn.addEventListener("click", (event) => {
   location.reload();
+});
+
+//toggle
+const toggleBtn = document.querySelector(".fas");
+const toggle_controls = document.querySelector(".controls");
+
+toggleBtn.addEventListener("click", () => {
+  toggle_controls.classList.toggle("active");
 });

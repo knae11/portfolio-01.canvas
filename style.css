@@ -170,4 +170,10 @@ body {
     border: 1px solid var(--color-line);
     border-radius: 10%;
   }
+  .toggleBtn > i:hover {
+    cursor: pointer;
+  }
+  .controls.active {
+    display: flex;
+  }
 }
